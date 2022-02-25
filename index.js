@@ -1,5 +1,3 @@
-function helloWorld() {
-  console.log(module);
-}
+const logger = require("./logger");
 
-helloWorld();
+logger.log("hello modules");

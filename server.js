@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
 const students = [
   { id: 1, userName: "mohammad", age: 20 },
   { id: 2, userName: "ali", age: 19 },
@@ -25,6 +27,16 @@ app.get("/students/:id", (req, res) => {
   } else {
     res.send("not found");
   }
+});
+
+app.post("/students/:id", function (req, res) {
+  const student = {
+    id: students[students.length - 1].id + 1,
+    userName: req.body.userName,
+    age: req.body.age,
+  };
+  students.push(student);
+  res.send(student);
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

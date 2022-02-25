@@ -1,3 +1,4 @@
-const logger = require("./logger");
-
-logger.log("hello modules");
+const http = require("http");
+const server = http.createServer();
+server.listen(3000);
+console.log("Server listening in port 3000");

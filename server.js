@@ -20,6 +20,10 @@ app.get("/students/:userName", (req, res) => {
   res.send(req.params);
 });
 
+app.get("/students/:userName/:family", (req, res) => {
+  res.send(req.query);
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });

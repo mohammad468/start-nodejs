@@ -4,7 +4,7 @@ const port = 3000;
 
 app.use(express.json());
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 // ?my middleWares
 app.use((req, res, next) => {

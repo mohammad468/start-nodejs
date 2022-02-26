@@ -4,6 +4,12 @@ const port = 3000;
 
 app.use(express.json());
 
+// ?my middleWares
+app.use((req, res, next) => {
+  console.log("hello middleware");
+  next();
+});
+
 let students = [
   { id: 1, userName: "mohammad", age: 20 },
   { id: 2, userName: "ali", age: 19 },

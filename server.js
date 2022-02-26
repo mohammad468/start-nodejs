@@ -4,6 +4,8 @@ const port = 3000;
 
 app.use(express.json());
 
+app.use(express.urlencoded());
+
 // ?my middleWares
 app.use((req, res, next) => {
   console.log("hello middleware");

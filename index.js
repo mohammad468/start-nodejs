@@ -1,5 +1,15 @@
-console.log("salam"); //1
-setTimeout(() => {
-  console.log("che khabar ?"); //3
-}, 2000);
-console.log("khoubi ?"); //2
+console.log("salam");
+
+const customer = getCustomerDetail();
+
+console.log("customer detail : ", customer);
+
+function getCustomerDetail() {
+  setTimeout(() => {
+    console.log("fetch data from server");
+    return {
+      id: 1,
+      name: "mohammad",
+    };
+  }, 4000);
+}

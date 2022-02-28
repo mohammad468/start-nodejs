@@ -1,17 +1,16 @@
-const p = new Promise((resolve, reject) => {
-  // ....
-  setTimeout(() => {
-    resolve({
-      id: 1,
-      name: "mohammad",
-    });
-  }, 2000);
-  //   reject(new Error("Error"));
-});
+function resolveAfter2Seconds() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("resolved");
+    }, 2000);
+  });
+}
 
-p.then((item) => {
-  console.log(item);
-});
-// p.catch((item) => {
-//   console.log("cant fetch data");
-// });
+async function asyncCall() {
+  console.log("calling");
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  // expected output: "resolved"
+}
+
+asyncCall();
